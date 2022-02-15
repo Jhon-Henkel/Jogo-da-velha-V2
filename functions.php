@@ -53,27 +53,13 @@ function jogada_invalida (): void {
     $_SESSION['ia'] = 3;
 }//javascript de jogada inválida.
 
-function formulario (): void {
+function jogada_x_o (): void {
     if ($_SESSION['x/o'] == 1){
-        echo "<form class='center' method='post' action='main.php'>
-                    <label>
-                        Informe o local para '<b><span class='x'>X</span></b>':</br>
-                        <input type='number' name='X' placeholder='num.' max='9' min='1' required>
-                        <input type='submit' value='Jogar'>
-                    </label>
-                  </form>
-                ";//formulário que captura as jogadas de 'X'.
+        echo "Informe o local para '<b><span class='x'>X</span></b>':</br>";//informa as jogadas de 'X'.
     }elseif ($_SESSION['x/o'] == 2) {
-        echo "<form class='center' method='post' action='main.php' >
-                    <label>
-                        Informe o local para '<b><span class='o'>O</span></b>':</br>
-                        <input type='number' name='O' placeholder='num.' max='9' min='1' required>
-                        <input type='submit' value='Jogar' >
-                    </label>
-                  </form >
-                ";//formulário que captura as jogadas de 'O'.
-    }//formulários que captura as jogadas de 'X' e 'O'.
-}
+        echo "Informe o local para '<b><span class='o'>O</span></b>':</br>";//informa as jogadas de 'O'.
+    }//echo que informa a vez as jogadas de 'X' e 'O'.
+}//captura as jogadas de X e O
 
 function jogada_ia (): void {
     if (($_SESSION['j'][0][1] == '<span class="x">X</span>' && $_SESSION['j'][0][0] == '<span class="x">X</span>' && $_SESSION['j'][0][2] == '<span class="x">X</span>')
