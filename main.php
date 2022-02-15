@@ -138,7 +138,7 @@
 
             jogada_ia ();//faz a jogada de O pela IA.
             fim_jogo ();//valida o fim da partida.
-            jogada_x_o();//informa as jogadas de X e O.
+            jogadas_x_o();//informa as jogadas de X e O.
 
         }//jogadas one player.
 
@@ -302,7 +302,7 @@
             }//jogadas de 'O'.
 
             fim_jogo ();//valida o fim da partida.
-            jogada_x_o();//informa as jogadas de X e O.
+            jogadas_x_o();//informa as jogadas de X e O.
         }//jogadas two players
 
        tabuleiro ();//mostra o tabuleiro.

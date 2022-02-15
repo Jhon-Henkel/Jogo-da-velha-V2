@@ -2,7 +2,15 @@
 function tabuleiro (): void {
     echo "<h1 class='background_grade'>";
     echo "<br><hr class='linha_horizontal_1'></br>";
-    echo $_SESSION['j'][0][0] . "<span class='transparente'>.....</span>" .
+
+
+    echo '<form method="post" action="functions.php">
+            <input type="hidden" name="" id="">
+            <input type="submit" value="" >
+          </form>' .
+
+
+        "<span class='transparente'>.....</span>" .
         $_SESSION['j'][0][1] . "<span class='transparente'>.....</span>" .
         $_SESSION['j'][0][2]."</br></br>";
     echo "<br><hr class='linha_horizontal_2'></br>";
@@ -53,13 +61,13 @@ function jogada_invalida (): void {
     $_SESSION['ia'] = 3;
 }//javascript de jogada inválida.
 
-function jogada_x_o (): void {
+function jogadas_x_o (): void {
     if ($_SESSION['x/o'] == 1){
         echo "Informe o local para '<b><span class='x'>X</span></b>':</br>";//informa as jogadas de 'X'.
     }elseif ($_SESSION['x/o'] == 2) {
         echo "Informe o local para '<b><span class='o'>O</span></b>':</br>";//informa as jogadas de 'O'.
-    }//echo que informa a vez as jogadas de 'X' e 'O'.
-}//captura as jogadas de X e O
+    }//informa as jogadas de 'X' e 'O'.
+}
 
 function jogada_ia (): void {
     if (($_SESSION['j'][0][1] == '<span class="x">X</span>' && $_SESSION['j'][0][0] == '<span class="x">X</span>' && $_SESSION['j'][0][2] == '<span class="x">X</span>')
