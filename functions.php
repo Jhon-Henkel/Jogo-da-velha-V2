@@ -1,47 +1,54 @@
 <?php
 function tabuleiro (): void {
-    echo "<h1 class='background_grade'>";
-    echo "<br><hr class='linha_horizontal_1'></br>";
+    $form = $form ?? null;
 
-    echo "<button type='submit' name='x'>".$_SESSION['j'][0][0]."</button>" .
+    if ($_SESSION['x/o'] == 1){
+        $form = 'X';
+    }elseif ($_SESSION['x/o'] == 2){
+        $form = 'O';
+    }elseif ($_SESSION['ia'] == 1) {
+        $form = 'X';
+    }
 
-        "<span class='transparente'>.....</span>" .
-
-        $_SESSION['j'][0][1] .
-
-        "<span class='transparente'>.....</span>" .
-
-        $_SESSION['j'][0][2] .
-
-        "</br></br>";
-
-    echo "<br><hr class='linha_horizontal_2'></br>";
-
-    echo $_SESSION['j'][1][0] .
-
-        "<span class='transparente'>.....</span>" .
-
-        $_SESSION['j'][1][1] .
-
-        "<span class='transparente'>.....</span>" .
-
-        $_SESSION['j'][1][2]."</br></br>";
-
-    echo "<br><hr class='linha_horizontal_3'></br>";
-
-    echo $_SESSION['j'][2][0] .
-
-        "<span class='transparente'>.....</span>" .
-
-        $_SESSION['j'][2][1] .
-
-        "<span class='transparente'>.....</span>" .
-
-        $_SESSION['j'][2][2].
-
-        "</br></br>";
-
-    echo "</h1>";
+    echo "<h1 class='background_grade' xmlns=\"http://www.w3.org/1999/html\">
+          <hr class='linha_horizontal'>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='1'>
+          <button class='btn' type='submit'>" .$_SESSION['j'][0][0]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='2'>
+          <button class='btn' type='submit'>".$_SESSION['j'][0][1]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='3'>
+          <button class='btn' type='submit'>".$_SESSION['j'][0][2]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='4'>
+          <button class='btn' type='submit'>".$_SESSION['j'][1][0]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='5'>
+          <button class='btn' type='submit'>".$_SESSION['j'][1][1]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='6'>
+          <button class='btn' type='submit'>".$_SESSION['j'][1][2]."</button>
+          </form>     
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='7'>
+          <button class='btn' type='submit'>".$_SESSION['j'][2][0]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='8'>
+          <button class='btn' type='submit'>".$_SESSION['j'][2][1]."</button>
+          </form>
+          <form class='btn' method='post' action='main.php'>
+          <input type='hidden' name='$form' value='9'>
+          <button class='btn' type='submit'>".$_SESSION['j'][2][2]."</button>
+          </form>         
+          </h1>";
 }//função para exibir o tabuleiro com as posições.
 
 function fim_jogo (): void {
@@ -83,9 +90,9 @@ function jogada_invalida (): void {
 
 function jogadas_x_o (): void {
     if ($_SESSION['x/o'] == 1){
-        echo "Informe o local para '<b><span class='x'>X</span></b>':</br>";//informa as jogadas de 'X'.
+        echo "Clique no local para '<b><span class='x'>X</span></b>':</br>";//informa as jogadas de 'X'.
     }elseif ($_SESSION['x/o'] == 2) {
-        echo "Informe o local para '<b><span class='o'>O</span></b>':</br>";//informa as jogadas de 'O'.
+        echo "Clique no local para '<b><span class='o'>O</span></b>':</br>";//informa as jogadas de 'O'.
     }//informa as jogadas de 'X' e 'O'.
 }
 
