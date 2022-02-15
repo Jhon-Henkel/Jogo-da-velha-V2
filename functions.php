@@ -3,24 +3,44 @@ function tabuleiro (): void {
     echo "<h1 class='background_grade'>";
     echo "<br><hr class='linha_horizontal_1'></br>";
 
-
-    echo '<form method="post" action="functions.php">
-            <input type="hidden" name="" id="">
-            <input type="submit" value="" >
-          </form>' .
-
+    echo "<button type='submit' name='x'>".$_SESSION['j'][0][0]."</button>" .
 
         "<span class='transparente'>.....</span>" .
-        $_SESSION['j'][0][1] . "<span class='transparente'>.....</span>" .
-        $_SESSION['j'][0][2]."</br></br>";
+
+        $_SESSION['j'][0][1] .
+
+        "<span class='transparente'>.....</span>" .
+
+        $_SESSION['j'][0][2] .
+
+        "</br></br>";
+
     echo "<br><hr class='linha_horizontal_2'></br>";
-    echo $_SESSION['j'][1][0] . "<span class='transparente'>.....</span>" .
-        $_SESSION['j'][1][1] . "<span class='transparente'>.....</span>" .
+
+    echo $_SESSION['j'][1][0] .
+
+        "<span class='transparente'>.....</span>" .
+
+        $_SESSION['j'][1][1] .
+
+        "<span class='transparente'>.....</span>" .
+
         $_SESSION['j'][1][2]."</br></br>";
+
     echo "<br><hr class='linha_horizontal_3'></br>";
-    echo $_SESSION['j'][2][0] . "<span class='transparente'>.....</span>" .
-        $_SESSION['j'][2][1] . "<span class='transparente'>.....</span>" .
-        $_SESSION['j'][2][2]."</br></br>";
+
+    echo $_SESSION['j'][2][0] .
+
+        "<span class='transparente'>.....</span>" .
+
+        $_SESSION['j'][2][1] .
+
+        "<span class='transparente'>.....</span>" .
+
+        $_SESSION['j'][2][2].
+
+        "</br></br>";
+
     echo "</h1>";
 }//função para exibir o tabuleiro com as posições.
 
